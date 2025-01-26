@@ -1,0 +1,68 @@
+{
+  "name": "chill-lyrics",
+  "displayName": "Chill Lyrics",
+  "description": "Search and view song lyrics in VS Code sidebar",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomlin7/chill-lyrics"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:chillLyricsView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chill-lyrics",
+          "title": "Chill Lyrics",
+          "icon": "$(heart)"
+        }
+      ]
+    },
+    "views": {
+      "chill-lyrics": [
+        {
+          "type": "webview",
+          "id": "chillLyricsView",
+          "name": "Lyrics Search"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "chill.searchLyrics",
+        "title": "Search Lyrics"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
