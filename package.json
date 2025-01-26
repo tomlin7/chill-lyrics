@@ -2,7 +2,9 @@
   "name": "chill-lyrics",
   "displayName": "Chill Lyrics",
   "description": "Search and view song lyrics in VS Code sidebar",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "tomlin7",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/tomlin7/chill-lyrics"
